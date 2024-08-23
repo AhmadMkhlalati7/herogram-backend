@@ -10,8 +10,11 @@ const gameRouter = require("./routes/game.js")
 const userAuthRouter = require('./routes/userAuth.js')
 const statisticsRouter = require('./routes/statistics.js')
 
-const app = express()
 
+const app = express()
+app.get('/', (req, res) => {
+    res.send('Welcome to the API!')
+})
 app.use(bodyParser.urlencoded({extended: true, limit: "32mb"}))
 app.use(bodyParser.json({extended: true, limit: "32mb"}))
 app.use(cors())
